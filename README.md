@@ -1,272 +1,660 @@
-# Sankalp — UPSC CSE Preparation Platform
+# 🇮🇳 SANKALP — UPSC CSE Preparation Platform
 
-> **"Prepare Smarter. Serve Better."**  
-> Complete Cross-Platform Mobile Application built with Flutter & Dart.  
-> Developed for **ITM Skills University — B.Tech Computer Science & AI (Semester V)**.  
-> **Case Study 125**: Full-Scale EdTech UPSC Preparation Platform.
+<div align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=Montserrat&weight=700&size=32&duration=2800&pause=900&color=FF6B35&center=true&vCenter=true&width=700&lines=Prepare+Smarter.+Serve+Better.;Your+UPSC+Preparation+Companion;Learn+%7C+Practice+%7C+Revise+%7C+Track" alt="Sankalp Animated Heading"/>
+
+<br>
+
+<img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/>
+<img src="https://img.shields.io/badge/Provider-State%20Management-7B1FA2?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Material%203-UI-00897B?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/SharedPreferences-Local%20Storage-455A64?style=for-the-badge"/>
+
+<br><br>
+
+**A specialized Flutter learning ecosystem built for UPSC Civil Services Examination aspirants.**
+
+</div>
 
 ---
 
-## 🌟 Executive Summary
+## 🧭 About Sankalp
 
-**Sankalp** is a comprehensive, production-grade UPSC Civil Services Examination (CSE) preparation platform inspired by leading Indian EdTech architectures. It empowers aspirants across India with live interactive classes, on-demand video libraries, daily editorial digests & current affairs quizzes, a full-length All-India Mock Test Series with an interactive OMR sheet and diagnostic analytics, a digital notebook with local persistence, a peer community forum, and an interactive UPSC syllabus completion tracker.
+**Sankalp** is a cross-platform Flutter application designed for UPSC aspirants, developed for:
 
-The entire codebase is implemented cleanly in **pure Flutter + Dart** following clean architecture and **Provider** state management. It runs entirely self-contained with offline/mock persistence (via `shared_preferences`), requiring zero external cloud dependencies to run or demonstrate during an academic viva.
+> **Case Study 125 — Unacademy UPSC Preparation**
+
+The application brings learning, practice, revision, progress tracking and community engagement together in a single platform.
+
+Instead of switching between multiple tools for lectures, current affairs, tests, notes and discussions, Sankalp provides a unified preparation experience.
 
 ---
 
-## 🏛️ Academic Metadata
+## ✨ Why Sankalp?
 
-| Attribute | Details |
+```text
+        LEARN
+          ↓
+     LIVE CLASSES
+          ↓
+       PRACTICE
+          ↓
+    TESTS + PYQs
+          ↓
+       ANALYZE
+          ↓
+     IDENTIFY WEAKNESS
+          ↓
+       REVISE
+          ↓
+ NOTES + CURRENT AFFAIRS
+          ↓
+        TRACK
+          ↓
+   SYLLABUS PROGRESS
+          ↓
+      IMPROVE 🚀
+```
+
+---
+
+# 🚀 Core Features
+
+### 🎥 Live Classes
+
+- Live class schedule
+- Educator information
+- Topic preview
+- Interactive chat
+- Polls
+- Doubt submission
+
+### 📚 Recorded Classes
+
+Access previously recorded lectures and continue learning at your own pace.
+
+### 📰 Current Affairs
+
+- Daily current-affairs digest
+- Article details
+- GS/topic mapping
+- Bookmarking
+- Highlighting
+- Current-affairs quiz
+- Quiz results
+
+### 📝 Test Series
+
+- Multiple test categories
+- OMR-style question interface
+- Question navigation palette
+- Answer selection
+- Mark for review
+- Test submission
+- Detailed results
+- Performance analysis
+
+### 📊 Test Analysis
+
+Understand performance through:
+
+- Score
+- Accuracy
+- Correct / incorrect answers
+- Subject performance
+- Question-level feedback
+- Performance indicators
+
+### 🔖 Smart Notes
+
+Create your own digital revision library.
+
+- Create notes
+- Edit notes
+- Delete notes
+- Bookmark notes
+- Highlight important information
+
+### 👥 Community
+
+A discussion ecosystem for UPSC aspirants.
+
+- Discussion feed
+- Discussion details
+- Replies
+- Likes
+- Create discussions
+- Educator-focused discussions
+
+### 👨‍🏫 Educator Profiles
+
+View educator information including:
+
+- Experience
+- Expertise
+- Student count
+- Courses
+- Teaching information
+
+### 📚 Syllabus Tracker
+
+Track preparation subject by subject.
+
+```text
+Polity       ███████████████░░  85%
+History      ████████████░░░░░  70%
+Geography    ██████████████░░░  78%
+Economy      ██████████░░░░░░░  62%
+Environment  █████████████░░░░  74%
+```
+
+### 📖 Previous Year Questions
+
+- UPSC PYQ archive
+- Year-wise questions
+- Subject filtering
+- Difficulty indicators
+- Question analysis
+
+### 🏆 Topper Talks
+
+Free selected sessions featuring topper-oriented strategy and preparation guidance.
+
+### 💳 Plus Subscription
+
+The case-study pricing model is represented inside the application.
+
+| Plan | Price |
+|---|---:|
+| ⭐ Plus | ₹24,999/year |
+| 📚 Individual Course | From ₹2,499/subject |
+| 📝 Test Series | ₹4,999 / 50 tests |
+| 🏆 Topper Talks | Free selected sessions |
+
+> Checkout is a demonstration flow for academic evaluation and is not presented as a live payment gateway.
+
+---
+
+# 🏗️ Application Architecture
+
+```mermaid
+flowchart TB
+
+    A["👤 User"]
+
+    B["📱 Flutter Presentation Layer
+    Screens + Reusable Widgets"]
+
+    C["⚡ Provider State Management
+    ChangeNotifier"]
+
+    D["⚙️ Service Layer
+    Local Storage + Mock Auth"]
+
+    E["📦 Domain / Data Layer
+    Typed Models + Mock Data"]
+
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    D --> E
+```
+
+---
+
+# 🔄 User Flow
+
+```mermaid
+flowchart LR
+
+    A["Splash"] --> B["Onboarding"]
+    B --> C["Login"]
+    C --> D["Home"]
+
+    D --> E["🎥 Learn"]
+    D --> F["📝 Practice"]
+    D --> G["📰 Revise"]
+    D --> H["📊 Track"]
+    D --> I["👥 Community"]
+
+    E --> E1["Live Classes"]
+    E --> E2["Recorded Classes"]
+
+    F --> F1["Test Series"]
+    F --> F2["PYQs"]
+
+    G --> G1["Current Affairs"]
+    G --> G2["Notes"]
+
+    H --> H1["Syllabus Tracker"]
+
+    I --> I1["Discussions"]
+    I --> I2["Topper Talks"]
+```
+
+---
+
+# 🔁 Test & Analysis Flow
+
+```mermaid
+flowchart TD
+
+    A["Select Test"] --> B["Instructions"]
+    B --> C["Start Test"]
+
+    C --> D["Question"]
+    D --> E["Select Answer"]
+
+    E --> F{"More Questions?"}
+
+    F -- "Yes" --> D
+    F -- "No" --> G["Submit Test"]
+
+    G --> H["Calculate Result"]
+    H --> I["Score"]
+    H --> J["Accuracy"]
+    H --> K["Subject Analysis"]
+    H --> L["Question-wise Feedback"]
+
+    I --> M["Performance Insights"]
+    J --> M
+    K --> M
+    L --> M
+```
+
+---
+
+# 🧠 Current Affairs Flow
+
+```mermaid
+flowchart LR
+
+    A["Daily Digest"] --> B["Article"]
+    B --> C["Read"]
+    B --> D["Bookmark"]
+    B --> E["Highlight"]
+    B --> F["Take Quiz"]
+
+    F --> G["Submit"]
+    G --> H["Result"]
+    H --> I["Answer / Explanation"]
+```
+
+---
+
+# 📊 Feature-to-Problem Mapping
+
+| Problem Statement | Sankalp |
 |---|---|
-| **Institution** | ITM Skills University |
-| **Program** | B.Tech Computer Science Engineering & Artificial Intelligence |
-| **Semester** | Semester V (Academic Year 2026-2027) |
-| **Subject** | Cross-Platform Application Development (Flutter) |
-| **Case Study** | Case Study 125 — EdTech Civil Services Examination Platform |
-| **Candidate** | Atharva Suryawanshi |
-| **Framework** | Flutter 3.47+ (Dart 3.13+) |
-| **Architecture** | Layered Architecture (Presentation, State Management, Data/Models, Services) |
-| **State Management**| Provider (`ChangeNotifier`, `ChangeNotifierProvider`, `Consumer`) |
-| **Local Storage** | `shared_preferences` (JSON Serialization for Notes, Bookmarks & State) |
+| Live classes | ✅ |
+| Chat | ✅ |
+| Polls | ✅ |
+| Doubt clearing | ✅ |
+| Recorded sessions | ✅ |
+| Current affairs | ✅ |
+| Current affairs quiz | ✅ |
+| Test series | ✅ |
+| OMR-like evaluation | ✅ |
+| Detailed analysis | ✅ |
+| Notes | ✅ |
+| Highlight | ✅ |
+| Bookmark | ✅ |
+| Community forum | ✅ |
+| Educator profiles | ✅ |
+| Syllabus tracker | ✅ |
+| PYQ analysis | ✅ |
+| Difficulty indicators | ✅ |
+| Plus subscription | ✅ |
+| Topper Talks | ✅ |
 
 ---
 
-## 📱 Core Features & Modules
+# 🛠️ Tech Stack
 
-### 1. Onboarding & Authentication
-- **Animated Splash Screen**: Brand emblem, tagline, and animated entrance.
-- **Onboarding Carousel**: 3 value-proposition slides highlighting Live Classes, Mock Tests, and Syllabus Tracking.
-- **Mock Authentication**: Form validation (Email + Password) with pre-filled demo account (`atharva@example.com` / `password123`).
+<div align="center">
 
-### 2. Home Dashboard & Bottom Navigation
-- **5 Core Tabs**: Home, Live, Tests, Current Affairs, and Profile.
-- **Dynamic Search Bar**: Instant real-time filtering of courses, lectures, and mock tests.
-- **Daily Study Streak & Target Tracker**: Gamified 12-day streak counter and target year indicator (Target: CSE 2027).
-- **Quick Action Grid**: 1-tap shortcuts to Syllabus Tracker, PYQs (2020-2025), Topper Talks, Community, and Digital Notes.
-- **Interactive Carousels**: Featured UPSC courses, upcoming live lectures, top educator profiles, and value banners.
+| Technology | Purpose |
+|---|---|
+| **Flutter** | Cross-platform UI |
+| **Dart** | Programming language |
+| **Provider** | State management |
+| **ChangeNotifier** | Reactive state updates |
+| **SharedPreferences** | Local persistence |
+| **Material 3** | UI framework |
+| **Google Fonts** | Typography |
+| **fl_chart** | Charts & analytics |
 
-### 3. Live & Recorded Classes
-- **Live Classroom Simulation**: Mock video streaming player with Live/Upcoming/Ended status tags.
-- **Real-Time Live Chat**: Interactive student chat stream with instant question submission.
-- **Live Polls**: Real-time multiple-choice poll with instant percentage breakdown and explanation.
-- **Doubts Tab**: Dedicated question submission queue for educator review.
-- **Recorded Class Detail**: Video playback scrubber (play/pause, seek, 1.25x/1.5x speed toggle, PDF lecture notes download).
-
-### 4. Daily Current Affairs & Editorial Analysis
-- **Categorized Digest**: Articles mapped directly to GS-I, GS-II, GS-III, GS-IV, and Prelims.
-- **Deep Article View**: Key takeaways, prelims pointers, mains practice question, and "Add to My Notes" integration.
-- **Daily Current Affairs Quiz**: Timed 5-question MCQs with negative marking simulation (-0.66 marks).
-- **Quiz Performance Card**: Scorecard, accuracy percentage, time taken, and detailed rationales.
-
-### 5. All-India Prelims Test Series & OMR Engine
-- **Test Catalog**: Filter by Full-Length Mocks, CSAT Paper-II, Subject-Wise GS tests, and PYQ simulations.
-- **Test Instructions**: Syllabus breakdown, marking rules (+2.0 correct, -0.66 incorrect, 120 minutes).
-- **Interactive Test Attempt Engine**:
-  - Live countdown timer with auto-submit safeguard.
-  - Question navigation palette with standard color coding (Green: Answered, Orange: Marked for Review, Red: Visited, Grey: Not Visited).
-  - Clear response, save & next, mark for review workflows.
-- **Comprehensive Test Results**: All-India Rank simulation, percentile calculation, score, and accuracy.
-- **Subject-Wise Diagnostic Analytics**: Visual performance bars (Polity, Economy, Geography, History, Science & Tech) identifying strengths and weak areas.
-
-### 6. UPSC Syllabus Completion Tracker
-- **Subject-Wise Coverage**: Covers Indian Polity, Modern History, Geography, Economy, Environment & Ecology, Science & Tech, Ethics (GS-IV), and CSAT.
-- **Interactive Topic Checklist**: Mark topics as *Not Started*, *In Progress*, or *Completed*.
-- **Dynamic Overall Progress Bar**: Automatically calculates percentage completion across 50+ granular UPSC syllabus topics.
-
-### 7. Digital Study Notes (CRUD)
-- **Local Persistence**: Notes are saved to `shared_preferences` and persist across app restarts.
-- **Rich Editor**: Title, Subject tagging, Topic association, and note content.
-- **Actions**: Add, view, edit, delete, and bookmark revision summaries.
-
-### 8. Aspirant Community & Discussion Forum
-- **Categorized Feeds**: General Prelims/Mains, Optional Strategy, Book Recommendations, and Doubt Clearing.
-- **Thread Details**: Full question prompt, educator/peer upvoting, and nested discussion replies.
-- **Create Discussion**: Start new threads with custom tags and question descriptions.
-
-### 9. Previous Year Questions (PYQs 2020–2025)
-- **Year-by-Year Archive**: Filter questions by exam year (2020 to 2025) and subject.
-- **Interactive Practice**: Reveal official UPSC answer key and detailed constitutional/historical explanations.
-- **Trend Analysis**: Graphical breakdown of question distribution per subject across recent CSE Prelims.
-
-### 10. Topper Talks & Strategy Sessions
-- **Free Video Archive**: Strategy masterclasses by AIR 1, AIR 3, AIR 8, and AIR 14.
-- **Booklist & Timetable Blueprints**: Downloadable booklists, mains answer writing templates, and interview prep guides.
-
-### 11. Monetization & Subscription Tiers (Per University Case Study Spec)
-- **Sankalp Plus Subscription**: Full live classes, all test series, offline downloads, mentor sessions — **₹24,999 / year**.
-- **Prelims Test Series Pass**: 30 Full-length & sectional mock tests — **₹4,999**.
-- **Individual Subject Masterclass**: Single subject deep dive — **₹2,499**.
-- **Checkout & Payment Simulation**: Mock payment gateway with UPI, Debit/Credit Card, and Net Banking options, generating simulated order receipts.
+</div>
 
 ---
 
-## 🎨 Design System & Aesthetics
+# 📂 Project Structure
 
-- **Primary Brand Color**: Deep Navy (`#0D1B2A` & `#1B263B`) representing trust, governance, and authority.
-- **Accent Brand Color**: Warm Saffron / Terracotta (`#FF7A00` & `#E07A5F`) inspired by India's national colors and educational energy.
-- **Surface & Backgrounds**: Clean neutral surfaces (`#FFFFFF` in light mode, `#152238` & `#0B131F` in dark mode).
-- **Typography**: Google Fonts **Inter** (`displayLarge`, `headlineLarge`, `titleMedium`, `bodyMedium`).
-- **Material 3 Theming**: Dynamic theme switching between Light Mode and Dark Mode with instant Provider notification.
-- **Aesthetic Elements**: Rounded corners (`16px`), subtle borders (`1px`), clean drop shadows, and zero visual clutter.
-
----
-
-## 📂 Project Structure
-
-```
-UnAcademy/
-├── lib/
-│   ├── main.dart                          # Application entry point
-│   ├── app/
-│   │   ├── app.dart                       # SankalpApp MaterialApp & Route Generator
-│   │   ├── routes.dart                    # 38+ Named route definitions
-│   │   └── theme.dart                     # Material 3 Light & Dark themes
-│   ├── models/                            # 14 Strongly typed immutable data models
-│   │   ├── user_model.dart
-│   │   ├── educator_model.dart
-│   │   ├── course_model.dart
-│   │   ├── class_model.dart
-│   │   ├── current_affairs_model.dart
-│   │   ├── question_model.dart
-│   │   ├── quiz_model.dart
-│   │   ├── test_model.dart
-│   │   ├── note_model.dart
-│   │   ├── discussion_model.dart
-│   │   ├── subscription_model.dart
-│   │   ├── topic_model.dart
-│   │   ├── pyq_model.dart
-│   │   └── topper_talk_model.dart
-│   ├── data/
-│   │   └── mock_data.dart                 # Rich UPSC datasets (courses, tests, PYQs, faculty)
-│   ├── services/
-│   │   ├── app_state_provider.dart        # Central ChangeNotifier reactive state
-│   │   ├── local_storage_service.dart     # SharedPreferences persistence wrapper
-│   │   └── mock_auth_service.dart         # Authentication service & credential validation
-│   ├── utils/
-│   │   ├── constants.dart                 # Brand colors, strings, case study pricing
-│   │   └── helpers.dart                   # Currency (₹), date, snackbars, difficulty badges
-│   ├── widgets/                           # 20 Reusable atomic components
-│   │   ├── primary_button.dart
-│   │   ├── secondary_button.dart
-│   │   ├── difficulty_badge.dart
-│   │   ├── empty_state.dart
-│   │   ├── section_header.dart
-│   │   ├── search_bar.dart
-│   │   ├── custom_app_bar.dart
-│   │   ├── app_bottom_navigation.dart
-│   │   ├── course_card.dart
-│   │   ├── live_class_card.dart
-│   │   ├── educator_card.dart
-│   │   ├── test_card.dart
-│   │   ├── current_affair_card.dart
-│   │   ├── quiz_card.dart
-│   │   ├── note_card.dart
-│   │   ├── discussion_card.dart
-│   │   ├── topic_progress_card.dart
-│   │   ├── pyq_card.dart
-│   │   ├── topper_talk_card.dart
-│   │   └── progress_indicator_card.dart
-│   └── screens/                           # 35+ Production-grade screens
-│       ├── onboarding/                    # Splash and Onboarding screens
-│       ├── auth/                          # Login and Signup screens
-│       ├── home/                          # Home shell & dashboard
-│       ├── live_classes/                  # Live class list & interactive classroom
-│       ├── recorded/                      # Recorded video catalog & video player
-│       ├── current_affairs/               # Daily editorial, detail, and quiz screens
-│       ├── tests/                         # Test catalog, instructions, OMR attempt, analysis
-│       ├── notes/                         # Notes list, rich note editor, note detail
-│       ├── community/                     # Discussion forum, create post, thread detail
-│       ├── educators/                     # Faculty list & educator profile
-│       ├── syllabus/                      # Syllabus completion tracker & topic detail
-│       ├── pyq/                           # PYQ archive (2020-2025) & subject trends
-│       ├── courses/                       # Courses catalog & course syllabus breakdown
-│       ├── subscription/                  # Pricing plans, checkout gateway, payment receipt
-│       ├── topper_talks/                  # Topper talks catalog & strategy video player
-│       └── profile/                       # User profile, edit profile, settings screen
-├── test/
-│   └── widget_test.dart                   # 6 Automated widget & state unit test suites
-├── documentation/                         # 9 University case study submission documents
-│   ├── 01_Project_Overview.md
-│   ├── 02_BRD.md
-│   ├── 03_SRS.md
-│   ├── 04_Feature_Documentation.md
-│   ├── 05_System_Architecture.md
-│   ├── 06_UI_UX_Documentation.md
-│   ├── 07_Testing_Documentation.md
-│   ├── 08_User_Manual.md
-│   └── 09_Future_Scope.md
-└── pubspec.yaml                           # Flutter dependencies & metadata
+```text
+lib/
+│
+├── app/
+│   ├── app.dart
+│   ├── routes.dart
+│   └── theme.dart
+│
+├── data/
+│   └── mock_data.dart
+│
+├── models/
+│   ├── user_model.dart
+│   ├── educator_model.dart
+│   ├── course_model.dart
+│   ├── class_model.dart
+│   ├── test_model.dart
+│   ├── question_model.dart
+│   ├── quiz_model.dart
+│   ├── note_model.dart
+│   ├── discussion_model.dart
+│   ├── topic_model.dart
+│   ├── pyq_model.dart
+│   ├── subscription_model.dart
+│   └── topper_talk_model.dart
+│
+├── services/
+│   ├── app_state_provider.dart
+│   ├── local_storage_service.dart
+│   └── mock_auth_service.dart
+│
+├── utils/
+│
+├── widgets/
+│
+└── screens/
+    ├── auth/
+    ├── community/
+    ├── courses/
+    ├── current_affairs/
+    ├── educators/
+    ├── home/
+    ├── live_classes/
+    ├── notes/
+    ├── onboarding/
+    ├── profile/
+    ├── pyq/
+    ├── recorded/
+    ├── subscription/
+    ├── syllabus/
+    ├── tests/
+    └── topper_talks/
 ```
 
 ---
 
-## 🚀 How to Run the Application
+# ⚡ State Management
+
+Sankalp uses **Provider + ChangeNotifier** to maintain centralized application state.
+
+```mermaid
+flowchart LR
+
+    UI["Flutter UI"] --> P["AppStateProvider"]
+
+    P --> A["Authentication"]
+    P --> N["Notes"]
+    P --> B["Bookmarks"]
+    P --> S["Syllabus"]
+    P --> T["Tests"]
+    P --> C["Community"]
+
+    P --> LS["SharedPreferences"]
+
+    LS --> P
+
+    P --> UI
+```
+
+This provides:
+
+- Centralized state
+- Reactive UI updates
+- Separation of UI and business logic
+- Easier feature expansion
+- Local persistence
+
+---
+
+# 💾 Local Persistence
+
+The academic version uses local persistence for demo functionality.
+
+Stored application information can include:
+
+```text
+Onboarding State
+       ↓
+Login State
+       ↓
+Theme Preference
+       ↓
+Bookmarks
+       ↓
+Notes
+       ↓
+User Preferences
+```
+
+---
+
+# 🧪 Testing & Validation
+
+The application includes a Flutter test structure and can be evaluated using the following flows:
+
+| Test | Expected Result |
+|---|---|
+| Launch App | Splash appears |
+| Onboarding | User reaches authentication |
+| Login | Dashboard opens |
+| Live Class | Class details displayed |
+| Poll | User can interact |
+| Doubt | Doubt submission works |
+| Current Affairs | Article opens |
+| Quiz | Result generated |
+| Test | Questions load |
+| OMR Navigation | Question state changes |
+| Submit Test | Result generated |
+| Analysis | Performance displayed |
+| Notes | CRUD operations work |
+| Bookmark | State persists |
+| Syllabus | Progress changes |
+| PYQ | Questions and difficulty appear |
+| Community | Discussion interaction works |
+| Subscription | Pricing displayed |
+| Theme | Light/dark mode changes |
+
+---
+
+# 📈 Product Vision
+
+Sankalp is designed around five pillars:
+
+```text
+        ┌─────────────────┐
+        │     LEARN       │
+        │ Classes + Videos│
+        └────────┬────────┘
+                 │
+    ┌────────────▼────────────┐
+    │       PRACTICE          │
+    │ Tests + PYQs + Quizzes  │
+    └────────────┬────────────┘
+                 │
+    ┌────────────▼────────────┐
+    │        REVISE           │
+    │ Notes + Current Affairs │
+    └────────────┬────────────┘
+                 │
+    ┌────────────▼────────────┐
+    │         TRACK           │
+    │ Syllabus + Performance  │
+    └────────────┬────────────┘
+                 │
+    ┌────────────▼────────────┐
+    │        ENGAGE           │
+    │ Community + Topper Talks│
+    └─────────────────────────┘
+```
+
+---
+
+# 🔮 Future Scope
+
+### ☁️ Cloud Backend
+
+Replace mock data with a production backend and database.
+
+### 🔐 Real Authentication
+
+Implement secure authentication and role-based access.
+
+### 🎥 Live Streaming
+
+Integrate WebRTC/live streaming infrastructure.
+
+### 💬 Real-Time Communication
+
+Use WebSockets for live chat, polls and doubt resolution.
+
+### 🤖 AI Study Assistant
+
+Provide:
+
+- Personalized study plans
+- Weak-topic detection
+- AI explanations
+- Smart revision
+- Adaptive questions
+
+### 🔔 Push Notifications
+
+Notifications for:
+
+- Upcoming classes
+- Test reminders
+- Current affairs
+- New courses
+- Important UPSC updates
+
+### 💳 Payment Integration
+
+Integrate a secure payment gateway for real subscriptions.
+
+---
+
+# 🎓 Academic Information
+
+**Project:** Sankalp – UPSC CSE Preparation Platform  
+**Case Study:** 125 – Unacademy UPSC Preparation
+
+**Student:** Atharva Pravin Gahine  
+**Roll No.:** 150096724079  
+**Program:** B.Tech Computer Science Engineering & AI  
+**Semester:** V  
+**Institute:** ITM Skills University
+
+---
+
+# 🏆 Project Highlights
+
+<div align="center">
+
+### 🎥 Learn
+
+Live + Recorded Classes
+
+### 📝 Practice
+
+Tests + PYQs + Quizzes
+
+### 🔖 Revise
+
+Notes + Current Affairs
+
+### 📊 Track
+
+Syllabus + Performance
+
+### 👥 Engage
+
+Community + Topper Talks
+
+</div>
+
+---
+
+# 🚀 Getting Started
 
 ### Prerequisites
-- Flutter SDK (Version 3.24+ or 3.47+)
-- Dart SDK (Version 3.5+ or 3.13+)
-- Google Chrome, macOS Desktop, or an Android/iOS emulator
 
-### Step 1: Clone & Navigate
 ```bash
-cd /Users/sanchita/Desktop/UnAcademy
+Flutter SDK
+Dart SDK
+Android Studio / VS Code
+Android Emulator / Physical Device
 ```
 
-### Step 2: Install Dependencies
+### Clone Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd Sankalp
+```
+
+### Install Dependencies
+
 ```bash
 flutter pub get
 ```
 
-### Step 3: Verify Code Quality & Tests
+### Run Application
+
 ```bash
-flutter analyze
+flutter run
+```
+
+### Run Tests
+
+```bash
 flutter test
 ```
-*Expected Result:*
-- `flutter analyze`: **No issues found!**
-- `flutter test`: **All tests passed! (6/6)**
 
-### Step 4: Launch the Application
-- **Run on macOS Desktop**:
-  ```bash
-  flutter run -d macos
-  ```
-- **Run in Google Chrome**:
-  ```bash
-  flutter run -d chrome
-  ```
-- **Run on Connected Mobile Device / Simulator**:
-  ```bash
-  flutter run
-  ```
+### Static Analysis
+
+```bash
+flutter analyze
+```
 
 ---
 
-## 🔑 Demo Credentials
+# 📌 Academic Note
 
-To test the application immediately without signing up:
-- **Email**: `atharva@example.com`
-- **Password**: `password123`
-*(Or click "Quick Demo Login" on the Login Screen to log in with 1 tap).*
+This project is developed as an **academic Flutter application** based on the provided Unacademy UPSC case study.
 
----
-
-## 📋 Comprehensive Academic Documentation Index
-
-Located inside the [`documentation/`](./documentation/) directory:
-1. [`01_Project_Overview.md`](./documentation/01_Project_Overview.md) — Executive summary, vision, problem statement, and scope.
-2. [`02_BRD.md`](./documentation/02_BRD.md) — Business Requirements Document & stakeholder analysis.
-3. [`03_SRS.md`](./documentation/03_SRS.md) — Software Requirements Specification (IEEE 830 compliant).
-4. [`04_Feature_Documentation.md`](./documentation/04_Feature_Documentation.md) — Complete breakdown of all 13 core modules & pricing matrix.
-5. [`05_System_Architecture.md`](./documentation/05_System_Architecture.md) — Layered design, Provider state management, and data flow.
-6. [`06_UI_UX_Documentation.md`](./documentation/06_UI_UX_Documentation.md) — Material 3 theming, color psychology, and wireframe specs.
-7. [`07_Testing_Documentation.md`](./documentation/07_Testing_Documentation.md) — Automated testing matrix, unit tests, and QA checklist.
-8. [`08_User_Manual.md`](./documentation/08_User_Manual.md) — Step-by-step student user manual and navigation guide.
-9. [`09_Future_Scope.md`](./documentation/09_Future_Scope.md) — AI answer evaluation, WebRTC audio mentoring, and scalability roadmap.
+The current implementation uses demo/mock data and local persistence where applicable. Production integrations such as real payment processing, cloud authentication, live video infrastructure and backend APIs can be added as future enhancements.
 
 ---
 
-## ⚖️ Academic Honor Code & Attribution
+<div align="center">
 
-This project is created strictly for academic educational purposes as part of the B.Tech Semester V curriculum at ITM Skills University. It does not reproduce, scrape, or distribute any proprietary branding, copyrighted media, or intellectual property belonging to Sorting Hat Technologies Pvt. Ltd. (Unacademy) or any other commercial entity. All trademarks belong to their respective owners.
+## 🇮🇳 SANKALP
+
+### **Prepare Smarter. Serve Better.**
+
+**Built with Flutter & Dart ❤️**
+
+---
+
+**Atharva Pravin Gahine**  
+**150096724079**
+
+⭐ If you like this project, give it a star!
+
+</div>
